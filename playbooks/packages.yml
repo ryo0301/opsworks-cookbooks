@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  remote_user: root
+  tasks:
+    - name: install minimal packages
+      yum: name={{item}} state=latest
+      with_items:
+        - gcc
+        - patch
+        - readline-devel
+        - openssl-devel
+        - libxml2-devel
+        - libxslt-devel
+        - ruby-devel
+        - tree
