@@ -5,5 +5,8 @@ timezone: Asia/Tokyo
 packages:
   - git
 runcmd:
-  - [easy_install, pip]
-  - [pip, install, ansible]
+  - easy_install pip
+  - pip install ansible
+  - [git, clone, "https://github.com/ryo0301/sandbox-playbooks.git", /tmp/sandbox-playbooks]
+  - [sed, -i, -r, '/Defaults\s+requiretty/a Defaults:root    !requiretty', /etc/sudoers]
+  - [ansible-playbook, /tmp/sandbox-playbooks/playbooks/master.yml, -i, /tmp/sandbox-playbooks/hosts]
