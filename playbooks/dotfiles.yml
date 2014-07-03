@@ -1,0 +1,16 @@
+---
+- hosts: localhost
+  remote_user: root
+  sudo: yes
+  sudo_user: ec2-user
+  vars:
+    work_dir: /home/ec2-user
+    repos_dir: "{{work_dir}}/.dotfiles"
+    branch: master
+  tasks:
+    - name: clone ryo0301/dotfiles repository for ec2-user user
+      git: repo=https://github.com/ryo0301/dotfiles.git dest={{repos_dir}} version={{branch}}
+    - name: make symlink ec2-user home directory
+      command: "{{repos_dir}}/init.sh"
+      args:
+        creates: "{{work_dir}}/.vimrc"
