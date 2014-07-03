@@ -8,9 +8,9 @@
     repos_dir: "{{work_dir}}/.dotfiles"
     branch: master
   tasks:
-    - name: clone ryo0301/dotfiles repository for ec2-user user
+    - name: clone ryo0301/dotfiles repository
       git: repo=https://github.com/ryo0301/dotfiles.git dest={{repos_dir}} version={{branch}}
-    - name: make symlink ec2-user home directory
+    - name: create symlink to home directory
       command: "{{repos_dir}}/init.sh"
       args:
         creates: "{{work_dir}}/.vimrc"
