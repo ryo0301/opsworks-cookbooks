@@ -7,4 +7,5 @@
       with_items:
         - awesome_print
         - aws-sdk
+        - bundler
         - pry
