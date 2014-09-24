@@ -6,6 +6,6 @@
       gem: name={{item}} state=latest user_install=no
       with_items:
         - awesome_print
-        - aws-sdk
+        - aws-sdk-v1
         - bundler
         - pry
