@@ -11,5 +11,9 @@
         - openssl-devel
         - libxml2-devel
         - libxslt-devel
-        - ruby-devel
+        - ruby21
+        - ruby21-devel
+        - rubygem21-rake
         - tree
+    - name: change system ruby version 2.0 -> 2.1
+      command: "alternatives --set ruby /usr/bin/ruby2.1"
