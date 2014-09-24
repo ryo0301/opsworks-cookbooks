@@ -1,4 +1,4 @@
-sandbox-cookbooks
+sandbox-playbooks
 ==================
 
-Cookbooks for my EC2 instance.
+Playbooks for My EC2 instance.
